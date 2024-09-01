@@ -7,6 +7,8 @@ var next = document.getElementById('next')
 var close = document.getElementById('close');
 var mainlayer = document.getElementById('mainlayer');
 var indexItem = 0;
+
+
 for (var i = 0; i < image.length; i++) {
   image[i].addEventListener('click', function (e) {
 
@@ -18,15 +20,18 @@ for (var i = 0; i < image.length; i++) {
   })
 }
 
+// to go right form the arrow
 next.addEventListener('click' , nextImage);
 function nextImage(){
     indexItem++;
-    if(indexItem == image.length){
+    if(indexItem >image.length - 1){
+      //  or ======>>>>>   if(indexItem == image.length)
       indexItem = 0;
     }
     imagebox.style.backgroundImage = `url(${image[indexItem].src})`
  }
 
+// to go left means the previos slide form the arrow
  prev.addEventListener('click', prevImage);
 
  function prevImage(){
@@ -40,11 +45,13 @@ function nextImage(){
  }
 
 
+ // to close the imagebox 
 close.addEventListener('click', function () {
   document.getElementById("mainlayer").style.display = 'none';
 })
 
 // key from keyboard we using the Document 
+//to slide from the keyboard ex: escap , arrowleft and arrowright
 document.addEventListener('keyup', function (e) {
 
   if (e.key === "Escape") {
@@ -56,16 +63,19 @@ document.addEventListener('keyup', function (e) {
   else if (e.key === "ArrowLeft"|| e.key === "a") {
     prevImage();
   };
-
 });
 
- 
+
+ //layer to close layer
+// to close the image box when click out the work space
 mainlayer.addEventListener('click' ,function(e){
   document.getElementById("mainlayer").style.display = 'none';
 
+
+
+  
+})
   imagebox.addEventListener('click' ,function(e){
 
   e.stopPropagation();
-  
-})
 })

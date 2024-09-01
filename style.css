@@ -19,19 +19,20 @@ body{
      justify-content: space-between;
     align-items: center;
      flex-wrap: wrap;
+ 
    }
 
 .items-images .item{
     width: calc(100% / 3);
-   
- }
+  }
 
  .items-images .item img{
     width: 100%;
       padding: 20px;
     cursor: pointer;
     height: 311px;
- }
+
+  }
 
 
  #imagebox i{
@@ -66,6 +67,8 @@ body{
     height: 70%;
     justify-content: space-between;
     position: relative;
+    box-shadow: 0px 0px 3px 1px rgb(219, 218, 216);
+    border-radius: 10px;
  }
 
  #mainlayer #imagebox .close{
